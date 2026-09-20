@@ -809,6 +809,7 @@ input,textarea,select{background:rgba(10,10,20,.6)!important;border:1px solid rg
         <div class="glass-card corner-deco neon-border" style="padding:44px;border-radius:4px;max-width:720px;margin:0 auto;position:relative">
           <form id="appForm" onsubmit="submitForm(event, this); return false;" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
             <div><label style="display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-family:'Orbitron',sans-serif">In-Game Name</label><input name="gameName" type="text" required style="width:100%;padding:12px 14px;border-radius:2px;font-family:inherit;font-size:14px;box-sizing:border-box"></div>
+            <div><label style="display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-family:'Orbitron',sans-serif">Delta ID</label><input name="deltaId" type="text" required placeholder="Enter your Delta ID" style="width:100%;padding:12px 14px;border-radius:2px;font-family:inherit;font-size:14px;box-sizing:border-box"></div>
             <div><label style="display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;font-family:'Orbitron',sans-serif">Discord ID</label><input name="discordId" type="text" required placeholder="username#0000" style="width:100%;padding:12px 14px;border-radius:2px;font-family:inherit;font-size:14px;box-sizing:border-box"></div>
             <div><label style="display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;font-family:'Orbitron',sans-serif">Umur</label><input name="age" type="number" min="13" max="60" required style="width:100%;padding:12px 14px;border-radius:2px;font-family:inherit;font-size:14px;box-sizing:border-box"></div>
             <div><label style="display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent4);margin-bottom:8px;font-family:'Orbitron',sans-serif">ROLE</label><select name="role" required style="width:100%;padding:12px 14px;border-radius:2px;font-family:inherit;font-size:14px;box-sizing:border-box"><option value="">Pilih role...</option><option>Assault</option><option>Engineer</option><option>Recon</option><option>Support</option><option>Biarkan T2M tentukan</option></select></div>
@@ -884,6 +885,7 @@ async function submitForm(event, form) {
  var status = document.getElementById('formStatus');
  var values = {
    gameName: form.elements.gameName.value.trim(),
+   deltaId: form.elements.deltaId.value.trim(),
    discordId: form.elements.discordId.value.trim(),
    age: form.elements.age.value,
    role: form.elements.role.value,
@@ -907,6 +909,7 @@ async function submitForm(event, form) {
          color: 16711900,
          fields: [
            { name: 'In-Game Name', value: values.gameName, inline: true },
+           { name: 'Delta ID', value: values.deltaId, inline: true },
            { name: 'Discord ID', value: values.discordId, inline: true },
            { name: 'Age', value: values.age, inline: true },
            { name: 'Role', value: values.role, inline: true },
